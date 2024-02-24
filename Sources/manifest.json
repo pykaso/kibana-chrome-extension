@@ -1,12 +1,12 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "KibanaQuickTabs",
-  "version": "1.0",
-  "description": "Chrome extension that speeds up the search in Kibana. It allows you to open a search for a selected parameter or text in a new background tab but in the context of the current search.",
+  "version": "0.2",
+  "description": "Speed up the search in Kibana. Search for a selected parameter in a new background tab in the context of the current search.",
   "icons": {
     "48": "icon.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "main.html",
     "default_icon": "icon.png"
   },
@@ -14,8 +14,8 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["bg.js"],
-    "persistent": false
+    "service_worker": "bg.js",
+    "type": "module"
   },
   "content_scripts": [
   {
